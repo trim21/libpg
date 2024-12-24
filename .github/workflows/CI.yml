@@ -45,8 +45,7 @@ jobs:
             core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
             core.exportVariable('VCPKG_ROOT', process.env.VCPKG_INSTALLATION_ROOT);
 
-      - name: Install libpq from vcpkg and install pg_config.exe stub
-        run: vcpkg install libpq:x64-windows
+      - run: vcpkg install libpq:x64-windows
         shell: powershell
         env:
           # cache vcpkg
